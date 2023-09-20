@@ -9,3 +9,8 @@ Mojo promises to be a rather "big deal": https://docs.modular.com/mojo/why-mojo.
 
 I'll update the rationale a bit more in the near future.
 
+TODO: structure this readme and add benchmarks for solutions vs. python
+
+## solutions
+
+* naive solution for [LC1768 - Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately)
