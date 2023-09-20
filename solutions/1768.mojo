@@ -1,10 +1,4 @@
 #PROBLEM: https://leetcode.com/problems/merge-strings-alternately/solutions/1075531/simple-python-solution/?envType=study-plan-v2&envId=leetcode-75
-from benchmark import Benchmark
-from utils.static_tuple import StaticTuple
-
-alias NUM_WARMUP = 0
-alias MAX_ITERS = 100
-
 def main():
     let word1: String = "135"
     let word2: String = "24"
