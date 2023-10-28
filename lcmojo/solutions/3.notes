@@ -1,0 +1,10 @@
+So, solving LC3 is difficult if we try to do it the Python way.
+
+Everything starts to break down as soon as we need a hash table, in Python, typically, the dictionary.
+There is no implementation of a HashTable or dictionary in Mojo.
+
+Using the PythonObject approach fails because the conversion from
+PythonObject to Mojo Int or Object is not supported today.
+
+So we're taking a less optimal approach that uses a List to keep track of
+seen elements.

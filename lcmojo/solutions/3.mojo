@@ -43,26 +43,51 @@ from python.object import PythonObject
 fn max(a: Int, b: Int) -> Int:
     return a if a - b >= 0 else b
 
-def lengthOfLongestSubstring(borrowed s: String) -> Float64:
-    var hm = Python.dict()
-    var l: Float64 = 0
-    var max_l: Float64 = 0
-    # var i: Int = 0
-    # while i < len(s):
-    hm[0] = 0
-    l = hm[0].to_float64()
+# TODO: Figure out how to use the Python dictionary approach to solve this exercise.
+# Right now, doesn't work, bcuz of conversion issues between Python & Mojo.
+# def lengthOfLongestSubstring(borrowed s: String) -> Int:
+#     var hm = Python.dict()
+#     var l: Int = 0
+#     var max_l: Int = 0
+#     var i: Float64 = 0
+#     # while i < len(s):
 
-    # for i in range(len(s)):
-    #     if not hm.contains(s[i]):
-    #         l += 1
-    #         hm[s[i]] = i
-    #         max_l = max(max_l, l)
-    #         i += 1
-    #     else:
-    #         hm[s[i]]
-    #         i = hm[s[i]] + 1
-    #         hm = dict()
-    #         l = 0
+#     for i in range(len(s)):
+#         if not hm.contains(s[i]):
+#             l += 1
+#             hm[s[i]] = i
+#             max_l = max(max_l, l)
+#             i += 1
+#         else:
+#             print(s[i])
+#             # i = hm[] + 1.0
+#             hm = Python.dict()
+#             l = 0
+#     return max_l
+
+from utils.list import DimList
+
+# Figure out how we can work around not having a dictionary
+# as well as no way to get the index of a certain value in the list
+# because we need to keep track of index of the seen character.
+def lengthOfLongestSubstring(borrowed s: String) -> Int:
+    var l: Int = 0
+    var max_l: Int = 0
+    var i: Int = 0
+    var seen_characters: DimList[len(s), String]
+    var seen_index: DimList[len(s), Int]
+
+    for i in range(len(s)):
+        if not seen.contains(s[i]):
+            l += 1
+            seen.append(s[i])
+            seen_index.append(i)
+            max_l = max(max_l, l)
+            i += 1
+        else:
+            i = seen_index. + 1
+            seen = Python.dict()
+            l = 0
     return max_l
 
 def main():
